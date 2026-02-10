@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout | Homedee</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">Home<span>dee</span></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">All Product</a>
+  </nav>
+</header>
+
+<section class="checkout">
+  <h1>ชำระเงิน</h1>
+
+  <div class="checkout-box">
+
+    <!-- ข้อมูลลูกค้า -->
+    <div class="checkout-form">
+      <h3>ข้อมูลผู้สั่งซื้อ</h3>
+
+      <input type="text" placeholder="ชื่อ - นามสกุล" required>
+      <input type="text" placeholder="เบอร์โทรศัพท์" required>
+      <input type="email" placeholder="อีเมล">
+      <textarea placeholder="ที่อยู่จัดส่ง" required></textarea>
+
+      <h3>วิธีการชำระเงิน</h3>
+      <label>
+        <input type="radio" name="payment" value="bank" checked>
+        โอนผ่านธนาคาร
+      </label><br>
+
+      <label>
+        <input type="radio" name="payment" value="cod">
+        เก็บเงินปลายทาง
+      </label><br>
+
+      <label>
+        <input type="radio" name="payment" value="card">
+        บัตรเครดิต
+      </label>
+
+      <!-- QR -->
+      <div class="qr-box" id="qrBox">
+        <p>สแกนเพื่อชำระเงิน</p>
+        <img src="images/products/004999157416776_20260211_004749.jpeg" alt="QR Payment">
+      </div>
+
+      <button class="confirm-btn" onclick="confirmOrder()">
+        ยืนยันการสั่งซื้อ
+      </button>
+    </div>
+
+    <!-- สรุปรายการ -->
+    <div class="order-summary">
+      <h3>สรุปรายการ</h3>
+      <p>สินค้า: <span id="product-name">-</span></p>
+      <p>ราคา: ฿<span id="product-price">0</span></p>
+      <hr>
+      <p><strong>รวมทั้งหมด: ฿<span id="total-price">0</span></strong></p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <p>This website is for educational purposes only (เว็บไซต์สำหรับการศึกษาเท่านั้น)</p>
+</footer>
+
+<script>
+  // ดึงข้อมูลจาก URL
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get("name");
+  const price = params.get("price");
+
+  if (name && price) {
+    document.getElementById("product-name").textContent = name;
+    document.getElementById("product-price").textContent = price;
+    document.getElementById("total-price").textContent = price;
+  }
+
+  // แสดง QR เฉพาะโอนเงิน
+  const paymentRadios = document.querySelectorAll('input[name="payment"]');
+  const qrBox = document.getElementById("qrBox");
+
+  paymentRadios.forEach(radio => {
+    radio.addEventListener("change", () => {
+      qrBox.style.display = radio.value === "bank" && radio.checked
+        ? "block"
+        : "none";
+    });
+  });
+
+  // ยืนยันการสั่งซื้อ
+  function confirmOrder() {
+    alert("สั่งซื้อสำเร็จ! ขอบคุณที่ใช้บริการ Homedee");
+    window.location.href = "order-success.html";
+  }
+</script>
+
+</body>
+</html>
