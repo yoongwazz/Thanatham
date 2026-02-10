@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | Homedee</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== Navbar ===== -->
+<header class="navbar">
+  <div class="logo">Home<span>dee</span></div>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="products.html">All Product</a>
+    <a href="order-tracking.html">Order Tracking</a>
+    <a href="contact.html">Contact us</a>
+    <a href="checkout.html">Checkout</a>
+    <a href="login.html">Login</a>
+  </nav>
+</header>
+
+<!-- ===== Header ===== -->
+<section class="page-header">
+  <h1>Login</h1>
+  <p>เข้าสู่ระบบเพื่อใช้งาน Homedee</p>
+</section>
+
+<!-- ===== Login Section ===== -->
+<section class="login-section">
+  <div class="login-box">
+
+    <h2>Welcome Back</h2>
+    <p class="subtitle">กรุณาเข้าสู่ระบบ</p>
+
+    <form id="loginForm">
+  <label>Email</label>
+  <input type="email" id="email" placeholder="example@email.com">
+
+  <label>Password</label>
+  <input type="password" id="password" placeholder="********">
+
+  <div class="login-options">
+    <label>
+      <input type="checkbox"> Remember me
+    </label>
+    <a href="#">Forgot password?</a>
+  </div>
+
+  <button type="submit">Login</button>
+</form>
+
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <p>This website is for educational purposes only (เว็บไซต์สำหรับการศึกษาเท่านั้น)</p>
+</footer>
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // กันไม่ให้รีเฟรชหน้า
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    if (email === "" || password === "") {
+      alert("กรุณากรอก Email และ Password ให้ครบ");
+      return;
+    }
+
+    // ผ่านเงื่อนไข → ไปหน้าแรก
+    window.location.href = "index.html";
+  });
+</script>
+
+</body>
+</html>
