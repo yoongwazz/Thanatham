@@ -1,0 +1,448 @@
+/* ===== General ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background: #3F4A2E;
+  color: white;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+nav .active {
+  text-decoration: underline;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #E53935;
+}
+
+/* ===== Hero ===== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px;
+  background: linear-gradient(to right, #000, #222);
+  color: white;
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero-image {
+  max-width: 45%;
+  text-align: right;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 450px;
+  animation: fadeUp 1s ease forwards;
+}
+
+.shop-btn {
+  display: inline-block;
+  background: #E53935;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.shop-btn:hover {
+  background: white;
+  color: #E53935;
+  transform: translateY(-2px);
+}
+
+.shop-btn {
+  border-radius: 30px;
+}
+
+/* ===== Category ===== */
+.category {
+  padding: 50px;
+  text-align: center;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.category-card {
+  padding: 40px;
+  background: #f5f5f5;
+  font-weight: bold;
+}
+
+/* ===== Products ===== */
+.products {
+  padding: 50px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.product-card {
+  position: relative;
+}
+
+.product-card img {
+  width: 100%;
+}
+
+.discount {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #E53935;
+  color: white;
+  padding: 5px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 ชิ้นต่อแถว */
+  gap: 24px;
+  padding: 40px;
+}
+
+/* การ์ดสินค้า */
+.product-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+/* Hover สวย ๆ */
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+
+/* ===== Footer ===== */
+.footer {
+  background: #3F4A2E;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.navbar a {
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #E53935;
+  transition: 0.3s;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.hero button {
+  transition: 0.3s ease;
+}
+
+.hero button:hover {
+  background: white;
+  color: #E53935;
+  transform: translateY(-2px);
+}
+
+.product-card {
+  transition: 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+  transition: 0.3s;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+.category-card {
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  background: #3F4A2E;
+  color: white;
+  transform: translateY(-5px);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero,
+.category,
+.products {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.product-card img,
+.category-card {
+  border-radius: 10px;
+}
+
+/* Page Header */
+.page-header {
+  background: #f5f5f5;
+  padding: 40px;
+  text-align: center;
+}
+
+.page-header h1 {
+  margin-bottom: 10px;
+}
+
+/* Sort Bar */
+.sort-bar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 50px;
+}
+
+.sort-bar select {
+  padding: 8px;
+}
+
+/* Product Button */
+.buy-btn {
+  display: block;          
+  width: 80%;              
+  margin: 12px auto 0;     
+  padding: 10px;
+  background: #3F4A2E;
+  color: white;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.buy-btn:hover {
+  background: #E53935;
+}
+
+
+/* Active menu */
+nav .active {
+  text-decoration: underline;
+}
+
+/* Order Tracking */
+.tracking-section {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.track-form {
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+.track-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.track-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.track-form button {
+  width: 100%;
+  padding: 12px;
+  background: #3F4A2E;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.track-form button:hover {
+  background: #E53935;
+}
+
+/* Contact Page */
+.contact-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 60px;
+}
+
+.contact-info {
+  background: #f5f5f5;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.contact-info h2 {
+  margin-bottom: 15px;
+}
+
+.contact-form {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.contact-form h2 {
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  background: #3F4A2E;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #E53935;
+}
+
+.map {
+  margin-top: 40px;
+}
+
+/* Checkout */
+.checkout {
+  padding: 60px;
+  background: #f6f7f9;
+}
+
+.checkout h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.checkout-box {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.checkout-form,
+.order-summary {
+  background: #fff;
+  padding: 30px;
+  border-radius: 14px;
+}
+
+.checkout-form input,
+.checkout-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.checkout-form textarea {
+  resize: none;
+  height: 90px;
+}
+
+.confirm-btn {
+  width: 100%;
+  padding: 14px;
+  background: #ff4d4f;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.confirm-btn:hover {
+  background: #e63b3d;
+}
+
+.order-summary p {
+  margin: 10px 0;
+}
